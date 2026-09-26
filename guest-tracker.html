@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Host RSVP Tracker | Lester's Florida Keys Birthday Bash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #FF5A5F;
+      --turquoise: #088395;
+      --ocean-blue: #0A4D68;
+      --ocean-deep: #051923;
+      --sand: #FAF5E9;
+      --white: #FFFFFF;
+      --text-main: #1C2833;
+      --text-muted: #566573;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #F4F8FA;
+      color: var(--text-main);
+      padding: 24px 16px 60px;
+    }
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, var(--ocean-blue), var(--turquoise));
+      color: white;
+      padding: 28px 24px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 10px 25px rgba(10, 77, 104, 0.12);
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-links a {
+      color: white;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 13.5px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .header-links a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: white;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      border: 1px solid #E2E8F0;
+    }
+    .stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ocean-blue);
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+    }
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      background: white;
+      border: 1.5px solid var(--turquoise);
+      color: var(--turquoise);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: #EBF8FA;
+    }
+    .btn-primary {
+      background: var(--turquoise);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #066B7A;
+    }
+    .table-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+      border: 1px solid #E2E8F0;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+    th {
+      background: #EAF3F6;
+      color: var(--ocean-blue);
+      font-weight: 700;
+      padding: 14px 16px;
+      border-bottom: 2px solid #D0E2E7;
+      white-space: nowrap;
+    }
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #EEF2F5;
+      vertical-align: top;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .badge-coming { background: #D4EDDA; color: #155724; }
+    .badge-might { background: #FFF3CD; color: #856404; }
+    .badge-nextyear { background: #F8D7DA; color: #721C24; }
+    .contact-link {
+      color: var(--turquoise);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div>
+        <h1>🌴 Lester's 50th Birthday Keys Bash — RSVP Tracker</h1>
+        <p style="opacity:0.9; font-size:14px; margin-top:4px;">Florida Keys • January 13–18, 2027 • Master Guest List (The Big 5-0)</p>
+      </div>
+      <div class="header-links">
+        <a href="invite.html">← View Live Invite Page</a>
+      </div>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num" id="sComing">0</div>
+        <div class="stat-label">Coming (Confirmed)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="sMight">0</div>
+        <div class="stat-label">Might Make That Bihh</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="sNext">0</div>
+        <div class="stat-label">Next Year</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="sHeadcount">0</div>
+        <div class="stat-label">Total Projected Guests</div>
+      </div>
+    </div>
+
+    <div class="actions-bar">
+      <h3 style="font-size: 18px; color: var(--ocean-blue);">All Responses</h3>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn" onclick="copyContactBatch()">📋 Copy All Phone Numbers</button>
+        <button class="btn btn-primary" onclick="exportDataJson()">📥 Download rsvps.json</button>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Party (Ad / Kd)</th>
+            <th>Excursions Interested</th>
+            <th>Notes / Dietary</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'lester_keys_rsvps_v1';
+    const fallbackData = [
+      {
+        id: 'rsvp_sample_1',
+        name: 'Marcus & Elena Vance',
+        phone: '(305) 555-0192',
+        email: 'marcus.vance@example.com',
+        status: 'Coming',
+        adults: 2,
+        kids: 0,
+        kidsAges: '',
+        excursions: ['Sunset DJ Catamaran Cruise', 'Sandbar Day & Jet Skis'],
+        notes: "Can't wait for stone crab night! Booked flights into MIA already."
+      },
+      {
+        id: 'rsvp_sample_2',
+        name: 'Trey Hollister',
+        phone: '(404) 555-7381',
+        email: 'trey.hollister@example.com',
+        status: 'Might make that bihh',
+        adults: 1,
+        kids: 0,
+        kidsAges: '',
+        excursions: ['Deep Sea & Reef Fishing Charter'],
+        notes: 'Checking my work rotation for MLK weekend, 80% confident.'
+      }
+    ];
+
+    function loadData() {
+      try {
+        const d = localStorage.getItem(STORAGE_KEY);
+        if (d) return JSON.parse(d);
+      } catch (e) {}
+      return fallbackData;
+    }
+
+    function render() {
+      const data = loadData();
+      let coming = 0, might = 0, next = 0, totalGuests = 0;
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      data.forEach(item => {
+        if (item.status === 'Coming') {
+          coming++;
+          totalGuests += (parseInt(item.adults || 0) + parseInt(item.kids || 0));
+        } else if (item.status === 'Might make that bihh') {
+          might++;
+        } else if (item.status === 'Gotta catch you next year') {
+          next++;
+        }
+
+        let badge = 'badge-coming';
+        if (item.status === 'Might make that bihh') badge = 'badge-might';
+        if (item.status === 'Gotta catch you next year') badge = 'badge-nextyear';
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><span class="badge ${badge}">${item.status}</span></td>
+          <td style="font-weight:700;">${item.name}</td>
+          <td><a class="contact-link" href="tel:${item.phone}">${item.phone}</a></td>
+          <td><a class="contact-link" href="mailto:${item.email}">${item.email}</a></td>
+          <td>${item.adults || 0} Ad / ${item.kids || 0} Kd ${item.kidsAges ? '<br><small style="color:var(--text-muted);">' + item.kidsAges + '</small>' : ''}</td>
+          <td style="font-size:13px;">${(item.excursions && item.excursions.length) ? item.excursions.join('<br>• ') : '—'}</td>
+          <td style="font-size:13px; color:var(--text-muted);">${item.notes || '—'}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('sComing').textContent = coming;
+      document.getElementById('sMight').textContent = might;
+      document.getElementById('sNext').textContent = next;
+      document.getElementById('sHeadcount').textContent = totalGuests;
+    }
+
+    function copyContactBatch() {
+      const data = loadData();
+      const phones = data.map(d => `${d.name}: ${d.phone}`).join('\n');
+      navigator.clipboard.writeText(phones).then(() => {
+        alert('Copied guest phones to clipboard!');
+      });
+    }
+
+    function exportDataJson() {
+      const data = loadData();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'rsvps.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lester's 50th Birthday Keys Bash | The Big 5-0 in Paradise (Jan 13–18, 2027)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #FF5A5F;
+      --coral-dark: #E03E43;
+      --coral-light: #FFEAEB;
+      --turquoise: #088395;
+      --turquoise-light: #EBF8FA;
+      --ocean-blue: #0A4D68;
+      --ocean-deep: #051923;
+      --gold: #FFB319;
+      --sand: #FAF5E9;
+      --sand-dark: #EFE4CC;
+      --white: #FFFFFF;
+      --text-main: #1C2833;
+      --text-muted: #566573;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-soft: 0 10px 30px rgba(10, 77, 104, 0.08);
+      --shadow-lg: 0 20px 40px rgba(10, 77, 104, 0.14);
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #F6FAFC;
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .brand-font {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    /* Top Sticky Action Bar */
+    .sticky-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(8, 131, 149, 0.12);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .sticky-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ocean-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-top-rsvp {
+      background: linear-gradient(135deg, var(--coral), #FF7B54);
+      color: var(--white);
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(255, 90, 95, 0.3);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-top-rsvp:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(255, 90, 95, 0.4);
+    }
+    .btn-host-toggle {
+      background: var(--turquoise-light);
+      border: 1px solid rgba(8, 131, 149, 0.25);
+      color: var(--turquoise);
+      padding: 8px 14px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+    .btn-host-toggle:hover {
+      background: #D8F2F6;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 16px 20px 60px;
+    }
+
+    /* Hero Banner */
+    .hero {
+      position: relative;
+      background: linear-gradient(145deg, #0A4D68 0%, #088395 50%, #05B292 100%);
+      border-radius: var(--radius-lg);
+      padding: 44px 28px 40px;
+      color: var(--white);
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 179, 25, 0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -40%;
+      left: -20%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(255, 90, 95, 0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 7vw, 56px);
+      line-height: 1.1;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .hero-subtitle {
+      font-size: clamp(16px, 3.5vw, 20px);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 620px;
+      margin: 0 auto 24px;
+    }
+    .quick-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .meta-card {
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius-md);
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .meta-card .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.8;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .meta-card .val {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* Section Cards */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(10, 77, 104, 0.06);
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 24px 18px;
+      }
+    }
+    .card-header {
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .icon-coral { background: var(--coral-light); color: var(--coral); }
+    .icon-turquoise { background: var(--turquoise-light); color: var(--turquoise); }
+    .icon-gold { background: #FEF7DC; color: #D48806; }
+
+    .card-header h2 {
+      font-size: clamp(22px, 4.5vw, 28px);
+      color: var(--ocean-blue);
+      line-height: 1.2;
+    }
+    .card-header p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* What's Covered Section */
+    .covered-highlight-box {
+      background: linear-gradient(135deg, #0A4D68 0%, #088395 100%);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .covered-badge-left h3 {
+      font-size: 22px;
+      margin-bottom: 4px;
+      color: #FFDE59;
+    }
+    .covered-badge-left p {
+      font-size: 14px;
+      opacity: 0.95;
+    }
+    .covered-zero-tag {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px dashed rgba(255, 255, 255, 0.6);
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+    }
+    .covered-zero-tag .amount {
+      font-size: 28px;
+      font-weight: 900;
+      font-family: 'Outfit', sans-serif;
+      line-height: 1;
+    }
+    .covered-zero-tag .sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .perk-card {
+      background: #F8FBFC;
+      border: 1px solid rgba(8, 131, 149, 0.12);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .perk-check {
+      background: #05B292;
+      color: var(--white);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .perk-content h4 {
+      font-size: 16px;
+      color: var(--ocean-blue);
+      margin-bottom: 4px;
+    }
+    .perk-content p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Itinerary Timeline */
+    .day-block {
+      border-left: 3px solid var(--turquoise);
+      padding-left: 20px;
+      margin-left: 10px;
+      margin-bottom: 26px;
+      position: relative;
+    }
+    .day-block::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--coral);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--turquoise);
+    }
+    .day-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .day-pill {
+      background: var(--ocean-blue);
+      color: var(--white);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .day-date {
+      font-weight: 800;
+      color: var(--ocean-blue);
+      font-size: 18px;
+    }
+    .day-theme {
+      font-size: 14px;
+      color: var(--coral);
+      font-weight: 700;
+    }
+    .itinerary-item {
+      background: #F8FAFC;
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 10px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .item-top h4 {
+      font-size: 15.5px;
+      color: var(--text-main);
+    }
+    .cost-tag {
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cost-free {
+      background: #D4EDDA;
+      color: #155724;
+    }
+    .cost-paid {
+      background: #FFF3CD;
+      color: #856404;
+    }
+    .itinerary-item p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* RSVP Form */
+    .rsvp-card {
+      background: var(--white);
+      border: 2px solid rgba(255, 90, 95, 0.25);
+      position: relative;
+    }
+    .rsvp-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--coral), var(--gold), var(--turquoise));
+      border-top-left-radius: var(--radius-lg);
+      border-top-right-radius: var(--radius-lg);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--ocean-blue);
+      margin-bottom: 8px;
+    }
+    .label-hint {
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-left: 4px;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #D6E4E8;
+      background: #FDFEFE;
+      font-size: 15px;
+      color: var(--text-main);
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--turquoise);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.15);
+    }
+
+    /* Status Poll Radio Buttons */
+    .status-poll-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .poll-option {
+      position: relative;
+      cursor: pointer;
+    }
+    .poll-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .poll-box {
+      border: 2px solid #E1E8EB;
+      border-radius: var(--radius-md);
+      padding: 16px 14px;
+      text-align: center;
+      background: #FAFCFD;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+    }
+    .poll-box .emoji {
+      font-size: 26px;
+    }
+    .poll-box .text {
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--text-main);
+    }
+    .poll-box .subtext {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .poll-option input[type="radio"]:checked + .poll-box {
+      border-color: var(--coral);
+      background: #FFF5F5;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(255, 90, 95, 0.18);
+    }
+    .poll-option input[type="radio"]:checked + .poll-box .text {
+      color: var(--coral);
+    }
+
+    /* Guest Count Row */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 500px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Excursion Checkboxes */
+    .checkbox-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checkbox-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border: 1.5px solid #E2E8F0;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      background: #FDFEFE;
+      transition: var(--transition);
+    }
+    .checkbox-card:hover {
+      background: var(--turquoise-light);
+      border-color: rgba(8, 131, 149, 0.4);
+    }
+    .checkbox-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .checkbox-card input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--turquoise);
+      cursor: pointer;
+    }
+    .checkbox-text .title {
+      font-weight: 700;
+      font-size: 14.5px;
+      color: var(--text-main);
+    }
+    .checkbox-text .est-cost {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--coral) 0%, #FF7B54 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 99px;
+      padding: 16px 28px;
+      font-size: 17px;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(255, 90, 95, 0.35);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(255, 90, 95, 0.45);
+    }
+
+    /* Confirmation Modal / Screen */
+    .confirmation-banner {
+      display: none;
+      background: linear-gradient(135deg, #05B292, #088395);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 28px;
+      animation: popIn 0.5s ease-out;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .confirmation-banner h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .confirmation-banner p {
+      font-size: 15px;
+      opacity: 0.95;
+      max-width: 500px;
+      margin: 0 auto 16px;
+    }
+    .confetti-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    /* Host Tracker Drawer / View */
+    #hostSection {
+      display: none;
+      border: 2px solid var(--ocean-blue);
+      background: #F4F8FA;
+    }
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .stat-pill {
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      text-align: center;
+      border: 1px solid rgba(8, 131, 149, 0.15);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .stat-pill .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--ocean-blue);
+      font-family: 'Outfit', sans-serif;
+    }
+    .stat-pill .lbl {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .host-table-wrapper {
+      overflow-x: auto;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid #D6E4E8;
+    }
+    table.rsvp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      text-align: left;
+    }
+    table.rsvp-table th {
+      background: #EAF3F6;
+      color: var(--ocean-blue);
+      font-weight: 700;
+      padding: 12px 14px;
+      border-bottom: 2px solid #D0E2E7;
+      white-space: nowrap;
+    }
+    table.rsvp-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #EAEFF2;
+      vertical-align: top;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .status-coming { background: #D4EDDA; color: #155724; }
+    .status-might { background: #FFF3CD; color: #856404; }
+    .status-nextyear { background: #F8D7DA; color: #721C24; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    footer a {
+      color: var(--turquoise);
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Quick Bar -->
+  <header class="sticky-bar">
+    <div class="sticky-title">
+      <span>🌴</span>
+      <span>Lester's 50th Keys Bash '27</span>
+    </div>
+    <div class="nav-actions">
+      <button type="button" class="btn-host-toggle" id="hostToggleBtn" onclick="toggleHostView()">
+        <span>🗝️ Host View</span>
+      </button>
+      <a href="#rsvp-section" class="btn-top-rsvp">
+        <span>RSVP Now</span>
+        <span>→</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Hero Header -->
+    <section class="hero">
+      <div class="badge-pill">
+        <span>👑</span>
+        <span>The Big 5-0 Milestone • MLK Weekend (Jan 13–18, 2027)</span>
+      </div>
+      <h1>Lester's 50th Birthday Keys Bash!</h1>
+      <p class="hero-subtitle">
+        Celebrating the Big 5-0 in Paradise! 5 epic sun-drenched days starting with oceanfront camping at Boyd's Key West, then crossing the 7-Mile Bridge into a private luxury waterfront estate in Marathon.
+      </p>
+
+      <div class="quick-meta-grid">
+        <div class="meta-card">
+          <div class="label">Milestone</div>
+          <div class="val">Lester's 50th Birthday</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Dates</div>
+          <div class="val">Jan 13 – 18, 2027</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Route Flow</div>
+          <div class="val">Boyd's Camping → Marathon Estate</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Marathon Estate Lodging</div>
+          <div class="val">$0 (100% Covered by Lester!)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Confirmation Banner (Appears after RSVP) -->
+    <div class="confirmation-banner" id="confirmBanner">
+      <div class="confetti-icon">🎉🍹🦀</div>
+      <h3 id="confirmHeadline">You're Locked In!</h3>
+      <p id="confirmMessage">
+        Thanks for letting us know! We have received your RSVP and contact info. Lester &amp; the team will keep you updated directly with house details and arrival instructions.
+      </p>
+      <button type="button" class="btn-host-toggle" style="background: white; color: #088395; margin-top: 8px;" onclick="scrollToSection('itinerary-section')">
+        View Full Itinerary ↓
+      </button>
+    </div>
+
+    <!-- Host Tracker Drawer (Hidden by default, toggled via button) -->
+    <section class="card" id="hostSection">
+      <div class="card-header">
+        <div class="card-icon icon-turquoise">🗝️</div>
+        <div>
+          <h2>Host Attendance Dashboard</h2>
+          <p>Real-time RSVP responses stored for Lester to coordinate guests directly.</p>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-pill">
+          <div class="num" id="statComing">0</div>
+          <div class="lbl">Coming</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num" id="statMight">0</div>
+          <div class="lbl">Might Make It</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num" id="statNextYear">0</div>
+          <div class="lbl">Catch Next Year</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num" id="statAdults">0</div>
+          <div class="lbl">Total Adults</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num" id="statKids">0</div>
+          <div class="lbl">Total Kids</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+        <h4 style="color: var(--ocean-blue); font-size: 15px;">Guest Directory &amp; Excursions</h4>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn-host-toggle" onclick="exportRSVPsJson()" style="font-size: 12px; padding: 6px 12px;">
+            📥 Export rsvps.json
+          </button>
+          <button type="button" class="btn-host-toggle" onclick="copyGuestContacts()" style="font-size: 12px; padding: 6px 12px;">
+            📋 Copy Contact List
+          </button>
+        </div>
+      </div>
+
+      <div class="host-table-wrapper">
+        <table class="rsvp-table" id="trackerTable">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Guest Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Party Size</th>
+              <th>Excursions Selected</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody id="trackerTableBody">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- What's Covered Section -->
+    <section class="card">
+      <div class="card-header">
+        <div class="card-icon icon-coral">🎁</div>
+        <div>
+          <h2>What's Covered by Lester (100% On The House)</h2>
+          <p>Lester's 50th birthday gift: 100% covered Marathon luxury estate lodging, welcome gathering &amp; celebration feasts!</p>
+        </div>
+      </div>
+
+      <div class="covered-highlight-box">
+        <div class="covered-badge-left">
+          <h3>Marathon Luxury Waterfront Estate is 100% Free for Guests</h3>
+          <p>Lester is covering 100% of the Marathon luxury estate (Fri–Mon, Jan 15–18; $0 expense for guests) plus the welcome gathering feasts &amp; Saturday night BBQ!</p>
+        </div>
+        <div class="covered-zero-tag">
+          <div class="amount">$0.00</div>
+          <div class="sub">Estate Lodging Cost</div>
+        </div>
+      </div>
+
+      <div class="perks-grid">
+        <div class="perk-card">
+          <div class="perk-check">✓</div>
+          <div class="perk-content">
+            <h4>Fri–Mon: Marathon Waterfront Luxury Estate</h4>
+            <p>Full weekend takeover of a 6–8 BR private luxury waterfront estate in Marathon with private heated pool, boat dockage, and expansive outdoor decks — 100% paid by Lester ($0 for guests).</p>
+          </div>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-check">✓</div>
+          <div class="perk-content">
+            <h4>Wed: Boyd's Welcome Gathering &amp; Accommodations</h4>
+            <p>Wednesday welcome feast at Boyd's tiki pavilion &amp; campfire with fresh Florida stone crab claws, Key West pink shrimp, craft drinks, and campfire s'mores — 100% hosted &amp; covered by Lester.</p>
+          </div>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-check">✓</div>
+          <div class="perk-content">
+            <h4>Sat Night: Birthday BBQ &amp; Pool Bash</h4>
+            <p>Saturday night 50th birthday celebration BBQ by the estate heated pool with grilled skirt steak, chimichurri, Key West pink shrimp, craft beers, cocktails, and midnight swim under the lights — 100% covered by Lester.</p>
+          </div>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-check">✓</div>
+          <div class="perk-content">
+            <h4>Premium Host Bar &amp; Island Provisions</h4>
+            <p>Stocked top-shelf host bar (tequila, bourbon, craft beer, champagne) across the trip, welcome treats, and poolside refreshments — covered by Lester.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guest Coverage Clarification Box -->
+      <div style="background: #F8F9FA; border: 1px solid #E2E8F0; border-radius: var(--radius-sm); padding: 14px 18px; margin-top: 20px; font-size: 13.5px; color: var(--text-main); line-height: 1.5;">
+        <strong style="color: var(--ocean-blue);">📋 Quick Breakdown of Costs &amp; Coverage:</strong><br>
+        • <strong style="color: #088395;">Lester Covers 100%:</strong> Marathon Luxury Waterfront Estate lodging (Fri–Mon, Jan 15–18; $0 for guests), Boyd's welcome gathering &amp; accommodations (Wed stone crab feast, drinks, campfire s'mores, tiki pavilion), and Saturday night birthday BBQ &amp; pool bash.<br>
+        • <strong style="color: var(--coral);">Guests Cover:</strong> Boyd's campsite/cabin lodging (Wed–Fri, Jan 13–15), travel/transport to/from the Florida Keys, and optional excursions &amp; personal dining.
+      </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section class="card" id="itinerary-section">
+      <div class="card-header">
+        <div class="card-icon icon-turquoise">🗺️</div>
+        <div>
+          <h2>The 50th Bash Itinerary: Boyd's Camp → Marathon Estate</h2>
+          <p>Two iconic Keys settings in 5 days! Complete timeline and transparent guest-split excursion pricing.</p>
+        </div>
+      </div>
+
+      <!-- Flow Banner -->
+      <div style="background: #EBF8FA; border-left: 4px solid var(--turquoise); border-radius: var(--radius-sm); padding: 14px 18px; margin-bottom: 24px; font-size: 14px; color: var(--ocean-blue);">
+        <strong>🌴 The Two-Stage Experience &amp; Lodging Coverage:</strong><br>
+        • <strong>Wed Jan 13 – Fri Jan 15:</strong> <em>Boyd's Key West Campground (Stock Island)</em> — Waterfront camping/glamping/cabins (guest-covered site/cabin), heated pool, Duval St &amp; Fort Zach beach. Lester hosts &amp; covers the Wednesday Stone Crab &amp; Tiki Pavilion welcome gathering!<br>
+        • <strong>Fri Jan 15 – Mon Jan 18:</strong> <em>Marathon Luxury Waterfront Estate</em> — 7-Mile Bridge transition, luxury estate compound <strong>100% covered by Lester ($0 for guests)</strong>, reef fishing, Saturday night pool BBQ bash, Sunset DJ Catamaran Cruise, and Sunset Grille farewell.
+      </div>
+
+      <!-- Day 1 -->
+      <div class="day-block">
+        <div class="day-header">
+          <span class="day-pill">Day 1</span>
+          <span class="day-date">Wednesday, Jan 13</span>
+          <span class="day-theme">• Key West Arrival &amp; Boyd's Oceanfront Camp</span>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Check-In at Boyd's Key West Campground (Stock Island) (4:00 PM)</h4>
+            <span class="cost-tag cost-paid">Guest Lodging (~$175–$250 / site)</span>
+          </div>
+          <p>Check into waterfront RV, tent, or cabin accommodations on Stock Island. Kids and early crew splash in the heated tropical pool and stroll the marina boardwalk.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Boyd's Welcome Gathering &amp; Accommodations: Stone Crab Feast &amp; Oceanfront S'mores (6:00 PM)</h4>
+            <span class="cost-tag cost-free">Covered 100% by Lester ($0)</span>
+          </div>
+          <p>Wednesday welcome feast! Chilled Florida stone crab claws, Key West pink shrimp, craft cocktails at Boyd's waterfront tiki pavilion, followed by roasting s'mores over oceanfront fire pits under the palm trees — 100% hosted &amp; covered by Lester ($0 for guests).</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Casual Dockside Dinner at Hogfish Bar &amp; Grill (8:00 PM)</h4>
+            <span class="cost-tag cost-paid">Guest-Split (~$40–$55 / adult)</span>
+          </div>
+          <p>World-famous fresh hogfish sandwiches, conch fritters, and open-air harbor breezes right on Safe Harbor marina docks.</p>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="day-block">
+        <div class="day-header">
+          <span class="day-pill">Day 2</span>
+          <span class="day-date">Thursday, Jan 14</span>
+          <span class="day-theme">• Fort Zachary Taylor Beach &amp; Mallory Square Sunset</span>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Fort Zachary Taylor State Park Beach &amp; Snorkel (10:00 AM – 1:00 PM)</h4>
+            <span class="cost-tag cost-paid">Park Entry ~$2.50 / person (~$7 / vehicle)</span>
+          </div>
+          <p>Key West's best beach where the Atlantic meets the Gulf. Calm turquoise water for snorkeling, shaded pine groves, sandcastles, and historic brick fort exploration.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Historic Seaport Lunch at Half Shell Raw Bar (1:30 PM)</h4>
+            <span class="cost-tag cost-paid">Guest-Split (~$30–$45 / adult)</span>
+          </div>
+          <p>Iconic open-air dockside seafood shack with fresh Gulf oysters on the half shell, peel-and-eat shrimp, and cold Key West ale.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Old Town / Duval St Stroll &amp; Mallory Square Sunset (3:30 PM – 6:30 PM)</h4>
+            <span class="cost-tag cost-free">Free Public Celebration ($0)</span>
+          </div>
+          <p>Explore legendary Duval Street, enjoy Cuban coffee and key lime pie on a stick, then witness Mallory Square's world-famous sunset celebration with street performers and fire-dancers.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Waterfront Dinner at The Perry Hotel / Matt's Stock Island (7:30 PM)</h4>
+            <span class="cost-tag cost-paid">Guest-Split (~$45–$65 / adult)</span>
+          </div>
+          <p>Harbor-view dining along Charter Row marina, followed by evening chill time around Boyd's waterfront campfire.</p>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="day-block">
+        <div class="day-header">
+          <span class="day-pill">Day 3</span>
+          <span class="day-date">Friday, Jan 15</span>
+          <span class="day-theme">• Bahia Honda Beach, Keys Fishery &amp; Marathon Estate Check-In</span>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Pack Up Boyd's &amp; Bahia Honda State Park Beach Stop (10:30 AM – 1:00 PM)</h4>
+            <span class="cost-tag cost-paid">Park Entry ~$2.50 / person (~$9 / vehicle)</span>
+          </div>
+          <p>Cross onto Calusa &amp; Sandspur beaches at Bahia Honda — ultra-shallow, crystal-clear calm shallows perfect for kids (ages 3–7) to wade safely, plus breathtaking Seven Mile Bridge panoramas.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Dockside Lunch at Keys Fishery Upstairs Raw Bar (1:15 PM – 2:30 PM)</h4>
+            <span class="cost-tag cost-paid">Guest-Split (~$30–$45 / adult)</span>
+          </div>
+          <p>World-famous original Lobster Reubens, stone crab claws, and smoked fish dip on the open-air marina deck in Marathon.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Check-In at Marathon Waterfront Luxury Estate (3:00 PM – 5:30 PM)</h4>
+            <span class="cost-tag cost-free">Covered 100% by Lester ($0)</span>
+          </div>
+          <p>Transition into the private 6–8 bedroom luxury waterfront compound as the full weekend crew arrives. Master suite room assignments, dockside unpacking, and poolside cold drinks.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Friday Sunset Arrival Poolside Chill &amp; Refreshments (6:30 PM)</h4>
+            <span class="cost-tag cost-free">Covered by Lester ($0)</span>
+          </div>
+          <p>Casual estate arrival bites, charcuterie, cold craft beers, tropical cocktails, and evening pool swim under the lights as everyone settles in.</p>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="day-block">
+        <div class="day-header">
+          <span class="day-pill">Day 4</span>
+          <span class="day-date">Saturday, Jan 16</span>
+          <span class="day-theme">• Reef Fishing, Sombrero Beach &amp; Lester's 50th Sunset DJ Cruise</span>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Morning Option A: Private Reef &amp; Offshore Sportfishing Charter (8:00 AM – 12:00 PM)</h4>
+            <span class="cost-tag cost-paid">$235 / angler (Split 6 ways, all gear &amp; tips included)</span>
+          </div>
+          <p>Sweet E'Nuf or Main Attraction private charter targeting yellowtail snapper, kingfish, and blackfin tuna. Catch will be prepped for fresh ceviche and dinner!</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Morning Option B: Sombrero Beach Relax &amp; Playground (9:30 AM – 12:00 PM)</h4>
+            <span class="cost-tag cost-free">100% Free Public Beach ($0)</span>
+          </div>
+          <p>Non-anglers and kids relax at Marathon's finest white sand beach — barrier-reef protected calm shallows, shaded tiki pavilions, playground, and oceanfront breeze.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>The Main 50th Event: Private Sunset DJ Catamaran Cruise (5:30 PM – 9:30 PM)</h4>
+            <span class="cost-tag cost-paid">Guest-Split (~$230–$480 / adult; Kids free)</span>
+          </div>
+          <p>The centerpiece of Lester's 50th! Private 50–65ft luxury sailing catamaran, live South Florida event DJ, open bar (champagne, beer, wine, cocktails), passed shrimp &amp; conch appetizers, and dancing under open ocean skies with zero noise curfews!</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Saturday Night 50th Birthday BBQ &amp; Pool Bash (6:30 PM)</h4>
+            <span class="cost-tag cost-free">Covered 100% by Lester ($0)</span>
+          </div>
+          <p>Lester's signature birthday BBQ feast by the estate heated pool! Grilled skirt steak with chimichurri, Key West pink shrimp skewers, craft beers, signature cocktails, and poolside celebration under the lights.</p>
+        </div>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="day-block">
+        <div class="day-header">
+          <span class="day-pill">Day 5</span>
+          <span class="day-date">Sunday, Jan 17</span>
+          <span class="day-theme">• Sombrero Beach Morning, Sandbar Flotilla &amp; Sunset Grille Farewell</span>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Morning Lanai Breakfast &amp; Sombrero Beach Coastal Walk (9:30 AM – 12:00 PM)</h4>
+            <span class="cost-tag cost-free">100% Free ($0)</span>
+          </div>
+          <p>Avocado toast, tropical fruit, espresso on the lanai, followed by beach walks and shell collecting with the kids at Sombrero Beach.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Backcountry Sandbar Boat Excursion: Snipe Point / Mud Keys (1:00 PM – 4:30 PM)</h4>
+            <span class="cost-tag cost-paid">Guest-Split ($120 / adult, $240 / couple; Kids free)</span>
+          </div>
+          <p>Private boat cruise to waist-deep turquoise flats. Giant floating lily pad mats, paddleboards, cold drink coolers, and sun-soaked relaxation.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Farewell Golden Hour Dinner at Sunset Grille &amp; Raw Bar (6:00 PM)</h4>
+            <span class="cost-tag cost-paid">Guest-Split (~$55–$75 / adult)</span>
+          </div>
+          <p>Celebratory final group dinner right at the foot of the historic Seven Mile Bridge. Multi-level open-air tiki decks, oceanfront pool, fresh stone crab, Mahi-Mahi, sushi, and panoramic sunset views.</p>
+        </div>
+      </div>
+
+      <!-- Day 6 -->
+      <div class="day-block">
+        <div class="day-header">
+          <span class="day-pill">Day 6</span>
+          <span class="day-date">Monday, Jan 18 (MLK Day)</span>
+          <span class="day-theme">• Departures &amp; Farewell to Paradise</span>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Cuban Coffee, Pastelitos &amp; Estate Check-Out (10:00 AM)</h4>
+            <span class="cost-tag cost-free">Included ($0)</span>
+          </div>
+          <p>Warm guava pastelitos, cafe con leche, group photos on the dock, packing up, and check-out by 10:00 AM.</p>
+        </div>
+        <div class="itinerary-item">
+          <div class="item-top">
+            <h4>Airport Flights &amp; Scenic Drive Home (11:00 AM)</h4>
+            <span class="cost-tag cost-free">—</span>
+          </div>
+          <p>Departures via Key West Airport (EYW) or scenic Overseas Highway drive back to Miami (MIA) / Fort Lauderdale (FLL).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="card rsvp-card" id="rsvp-section">
+      <div class="card-header">
+        <div class="card-icon icon-coral">✉️</div>
+        <div>
+          <h2>RSVP &amp; Attendance Poll</h2>
+          <p>Lock in your spot so we can plan rooms, crabs, drinks, and boats!</p>
+        </div>
+      </div>
+
+      <form id="rsvpForm" onsubmit="handleRSVPSubmit(event)">
+        
+        <!-- Status Poll -->
+        <div class="form-group">
+          <label>Attendance Status <span style="color: var(--coral);">*</span></label>
+          <div class="status-poll-grid">
+            
+            <label class="poll-option">
+              <input type="radio" name="rsvpStatus" value="Coming" required>
+              <div class="poll-box">
+                <span class="emoji">🎉</span>
+                <span class="text">Coming</span>
+                <span class="subtext">100% locked in for the Keys!</span>
+              </div>
+            </label>
+
+            <label class="poll-option">
+              <input type="radio" name="rsvpStatus" value="Might make that bihh">
+              <div class="poll-box">
+                <span class="emoji">👀</span>
+                <span class="text">Might make that bihh</span>
+                <span class="subtext">Checking flights &amp; schedule</span>
+              </div>
+            </label>
+
+            <label class="poll-option">
+              <input type="radio" name="rsvpStatus" value="Gotta catch you next year">
+              <div class="poll-box">
+                <span class="emoji">🥂</span>
+                <span class="text">Gotta catch you next year</span>
+                <span class="subtext">Sending love from afar</span>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="form-group">
+          <label for="fullName">Your Full Name <span style="color: var(--coral);">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Jordan & Taylor Davis" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phoneNumber">Mobile Phone Number <span style="color: var(--coral);">*</span><span class="label-hint">(for updates &amp; group text)</span></label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="e.g. (305) 555-0144" required>
+          </div>
+          <div class="form-group">
+            <label for="emailAddress">Email Address <span style="color: var(--coral);">*</span><span class="label-hint">(for calendar invite)</span></label>
+            <input type="email" id="emailAddress" name="emailAddress" placeholder="e.g. jordan@example.com" required>
+          </div>
+        </div>
+
+        <!-- Guest Counts -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="adultCount">Number of Adults Attending <span style="color: var(--coral);">*</span></label>
+            <select id="adultCount" name="adultCount" required>
+              <option value="1">1 Adult (Just Me)</option>
+              <option value="2" selected>2 Adults (Me + Plus 1 / Partner)</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults</option>
+              <option value="0">0 (Can't make it)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="kidCount">Number of Kids Attending</label>
+            <select id="kidCount" name="kidCount" onchange="toggleKidsAgeField()">
+              <option value="0" selected>0 Kids</option>
+              <option value="1">1 Kid</option>
+              <option value="2">2 Kids</option>
+              <option value="3">3+ Kids</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" id="kidsAgeGroup" style="display: none;">
+          <label for="kidsAges">Kids' Ages <span class="label-hint">(helps with room &amp; life-jacket planning)</span></label>
+          <input type="text" id="kidsAges" name="kidsAges" placeholder="e.g., Age 5 and Age 8">
+        </div>
+
+        <!-- Excursions Interest -->
+        <div class="form-group">
+          <label>Optional Excursions You're Interested In <span class="label-hint">(no commitment yet, helps us size reservations)</span></label>
+          <div class="checkbox-list">
+            
+            <label class="checkbox-card">
+              <div class="checkbox-left">
+                <input type="checkbox" name="excursion" value="Boyd's Key West Oceanfront Camping & S'mores (Wed-Fri)">
+                <div class="checkbox-text">
+                  <div class="title">⛺ Boyd's Key West Camping Leg (Wed–Fri)</div>
+                  <div class="est-cost">Waterfront camp / cabin stay, pool, fire pit s'mores (Welcome reception &amp; pavilion covered by Lester; site/cabin covered by guest)</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="checkbox-card">
+              <div class="checkbox-left">
+                <input type="checkbox" name="excursion" value="Marathon Waterfront Luxury Estate Weekend (Fri-Mon)">
+                <div class="checkbox-text">
+                  <div class="title">🏡 Marathon Luxury Estate Weekend Leg (Fri–Mon)</div>
+                  <div class="est-cost">Waterfront pool compound, dock, BBQ (100% Covered by Lester — $0 for guests)</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="checkbox-card">
+              <div class="checkbox-left">
+                <input type="checkbox" name="excursion" value="Lester's 50th Sunset DJ Catamaran Cruise (Saturday)">
+                <div class="checkbox-text">
+                  <div class="title">⛵ Lester's 50th Sunset DJ Catamaran Cruise (Saturday Evening)</div>
+                  <div class="est-cost">50–65ft luxury catamaran, live DJ, open bar &amp; passed appetizers (Guest-split ~$230–$480)</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="checkbox-card">
+              <div class="checkbox-left">
+                <input type="checkbox" name="excursion" value="Private Offshore & Reef Sportfishing Charter (Saturday)">
+                <div class="checkbox-text">
+                  <div class="title">🎣 Private Reef &amp; Offshore Sportfishing Charter (Saturday Morning)</div>
+                  <div class="est-cost">$235 / angler all-in (Split 6 ways with licensed captain &amp; mate)</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="checkbox-card">
+              <div class="checkbox-left">
+                <input type="checkbox" name="excursion" value="Backcountry Sandbar Boat Excursion (Sunday)">
+                <div class="checkbox-text">
+                  <div class="title">🏖️ Snipe Point / Mud Keys Sandbar Boat Excursion (Sunday Afternoon)</div>
+                  <div class="est-cost">$120 / adult ($240 / couple, kids free) — lily pads, paddleboards &amp; turquoise flats</div>
+                </div>
+              </div>
+            </label>
+
+            <label class="checkbox-card">
+              <div class="checkbox-left">
+                <input type="checkbox" name="excursion" value="Farewell Dinner at Sunset Grille & Raw Bar (Sunday)">
+                <div class="checkbox-text">
+                  <div class="title">🦀 Farewell Golden Hour Dinner at Sunset Grille (Sunday Evening)</div>
+                  <div class="est-cost">Foot of Seven Mile Bridge, oceanfront pool deck &amp; fresh stone crab (~$55–$75)</div>
+                </div>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Notes / Dietary -->
+        <div class="form-group">
+          <label for="guestNotes">Notes, Dietary Preferences, or Song Requests</label>
+          <textarea id="guestNotes" name="guestNotes" rows="3" placeholder="Shellfish allergies, favorite drink, flight timing, or anything else we should know..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <span>Submit My RSVP</span>
+          <span>🌴</span>
+        </button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Lester's 50th Birthday Keys Bash • The Big 5-0 in Paradise • Jan 13–18, 2027</p>
+    <p style="margin-top: 6px; font-size: 13px;">Questions? Reach out to Lester or reply directly via the contact details provided.</p>
+  </footer>
+
+  <script>
+    // Initial RSVP Seed Data or LocalStorage
+    const STORAGE_KEY = 'lester_keys_rsvps_v1';
+
+    const defaultRSVPs = [
+      {
+        id: 'rsvp_sample_1',
+        timestamp: '2026-09-24T18:30:00.000Z',
+        name: 'Marcus & Elena Vance',
+        phone: '(305) 555-0192',
+        email: 'marcus.vance@example.com',
+        status: 'Coming',
+        adults: 2,
+        kids: 0,
+        kidsAges: '',
+        excursions: ['Sunset DJ Catamaran Cruise', 'Sandbar Day & Jet Skis'],
+        notes: "Can't wait for stone crab night! Booked our flights into MIA already."
+      },
+      {
+        id: 'rsvp_sample_2',
+        timestamp: '2026-09-24T20:15:00.000Z',
+        name: 'Trey Hollister',
+        phone: '(404) 555-7381',
+        email: 'trey.hollister@example.com',
+        status: 'Might make that bihh',
+        adults: 1,
+        kids: 0,
+        kidsAges: '',
+        excursions: ['Deep Sea & Reef Fishing Charter'],
+        notes: 'Checking my work rotation for MLK weekend, 80% confident I am locking it down.'
+      }
+    ];
+
+    function getStoredRSVPs() {
+      try {
+        const data = localStorage.getItem(STORAGE_KEY);
+        if (data) {
+          return JSON.parse(data);
+        }
+      } catch (e) {
+        console.error('LocalStorage read error:', e);
+      }
+      return defaultRSVPs;
+    }
+
+    function saveStoredRSVPs(list) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+      } catch (e) {
+        console.error('LocalStorage write error:', e);
+      }
+    }
+
+    // Toggle kids age input
+    function toggleKidsAgeField() {
+      const kidCount = parseInt(document.getElementById('kidCount').value, 10);
+      const group = document.getElementById('kidsAgeGroup');
+      if (kidCount > 0) {
+        group.style.display = 'block';
+      } else {
+        group.style.display = 'none';
+      }
+    }
+
+    // Scroll Helper
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Toggle Host Tracker View
+    function toggleHostView() {
+      const hostSec = document.getElementById('hostSection');
+      if (hostSec.style.display === 'block') {
+        hostSec.style.display = 'none';
+        document.getElementById('hostToggleBtn').innerHTML = '<span>🗝️ Host View</span>';
+      } else {
+        hostSec.style.display = 'block';
+        document.getElementById('hostToggleBtn').innerHTML = '<span>✕ Close Host View</span>';
+        renderHostDashboard();
+        hostSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Render Host Stats & Table
+    function renderHostDashboard() {
+      const list = getStoredRSVPs();
+      let coming = 0, might = 0, nextYear = 0, adults = 0, kids = 0;
+
+      const tbody = document.getElementById('trackerTableBody');
+      tbody.innerHTML = '';
+
+      list.forEach(item => {
+        if (item.status === 'Coming') coming++;
+        else if (item.status === 'Might make that bihh') might++;
+        else if (item.status === 'Gotta catch you next year') nextYear++;
+
+        adults += parseInt(item.adults || 0, 10);
+        kids += parseInt(item.kids || 0, 10);
+
+        const tr = document.createElement('tr');
+        let badgeClass = 'status-coming';
+        if (item.status === 'Might make that bihh') badgeClass = 'status-might';
+        if (item.status === 'Gotta catch you next year') badgeClass = 'status-nextyear';
+
+        const excursionsStr = (item.excursions && item.excursions.length) ? item.excursions.join(', ') : 'None selected';
+        const partyStr = `${item.adults || 0} Ad / ${item.kids || 0} Kd ${item.kidsAges ? '(' + item.kidsAges + ')' : ''}`;
+
+        tr.innerHTML = `
+          <td><span class="status-badge ${badgeClass}">${item.status}</span></td>
+          <td style="font-weight:700;">${escapeHtml(item.name)}</td>
+          <td><a href="tel:${escapeHtml(item.phone)}" style="color:var(--turquoise); text-decoration:none; font-weight:600;">${escapeHtml(item.phone)}</a></td>
+          <td><a href="mailto:${escapeHtml(item.email)}" style="color:var(--turquoise); text-decoration:none;">${escapeHtml(item.email)}</a></td>
+          <td>${partyStr}</td>
+          <td style="max-width:220px; font-size:12.5px;">${escapeHtml(excursionsStr)}</td>
+          <td style="max-width:200px; color:var(--text-muted); font-size:12.5px;">${escapeHtml(item.notes || '—')}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('statComing').textContent = coming;
+      document.getElementById('statMight').textContent = might;
+      document.getElementById('statNextYear').textContent = nextYear;
+      document.getElementById('statAdults').textContent = adults;
+      document.getElementById('statKids').textContent = kids;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Export RSVPs as JSON file download
+    function exportRSVPsJson() {
+      const data = getStoredRSVPs();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'rsvps.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // Copy contacts list for quick group text / emails
+    function copyGuestContacts() {
+      const list = getStoredRSVPs();
+      const lines = list.map(g => `${g.name} | ${g.phone} | ${g.email} | Status: ${g.status}`);
+      navigator.clipboard.writeText(lines.join('\n')).then(() => {
+        alert('Copied ' + list.length + ' guest contact lines to clipboard!');
+      }).catch(() => {
+        alert(lines.join('\n'));
+      });
+    }
+
+    // Form Submission
+    function handleRSVPSubmit(event) {
+      event.preventDefault();
+
+      const form = document.getElementById('rsvpForm');
+      const selectedStatusEl = form.querySelector('input[name="rsvpStatus"]:checked');
+      if (!selectedStatusEl) {
+        alert('Please choose your attendance status.');
+        return;
+      }
+
+      const status = selectedStatusEl.value;
+      const fullName = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phoneNumber').value.trim();
+      const email = document.getElementById('emailAddress').value.trim();
+      const adults = parseInt(document.getElementById('adultCount').value, 10);
+      const kids = parseInt(document.getElementById('kidCount').value, 10);
+      const kidsAges = document.getElementById('kidsAges').value.trim();
+      const notes = document.getElementById('guestNotes').value.trim();
+
+      const excursionCheckboxes = form.querySelectorAll('input[name="excursion"]:checked');
+      const excursions = Array.from(excursionCheckboxes).map(cb => cb.value);
+
+      const newEntry = {
+        id: 'rsvp_' + Date.now(),
+        timestamp: new Date().toISOString(),
+        name: fullName,
+        phone: phone,
+        email: email,
+        status: status,
+        adults: adults,
+        kids: kids,
+        kidsAges: kidsAges,
+        excursions: excursions,
+        notes: notes
+      };
+
+      const currentList = getStoredRSVPs();
+      // Update existing if matching email, or append
+      const existingIdx = currentList.findIndex(x => x.email.toLowerCase() === email.toLowerCase());
+      if (existingIdx >= 0) {
+        currentList[existingIdx] = newEntry;
+      } else {
+        currentList.push(newEntry);
+      }
+
+      saveStoredRSVPs(currentList);
+
+      // Show confirmation banner
+      const banner = document.getElementById('confirmBanner');
+      const headline = document.getElementById('confirmHeadline');
+      const msg = document.getElementById('confirmMessage');
+
+      if (status === 'Coming') {
+        headline.textContent = `You're In, ${fullName}! 🌴🍹`;
+        msg.textContent = `We've got you down for ${adults} adult(s)${kids > 0 ? ' & ' + kids + ' kid(s)' : ''}. Lester and the crew can't wait to toast to Lester's 50th in the Keys with you!`;
+      } else if (status === 'Might make that bihh') {
+        headline.textContent = `Eyes On You, ${fullName}! 👀`;
+        msg.textContent = `We know how work and schedules go! We saved your info and we'll check in with you before headcount locks.`;
+      } else {
+        headline.textContent = `We'll Miss You, ${fullName}! 🥂`;
+        msg.textContent = `We appreciate you letting us know early! We will raise a glass of rum runner for you in the Keys and catch you on the next turn.`;
+      }
+
+      banner.style.display = 'block';
+      banner.scrollIntoView({ behavior: 'smooth' });
+
+      // Refresh Host Dashboard in case it's open
+      renderHostDashboard();
+
+      // Reset form
+      form.reset();
+      toggleKidsAgeField();
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // If local storage is empty, populate with default samples
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        saveStoredRSVPs(defaultRSVPs);
+      }
+      renderHostDashboard();
+    });
+  </script>
+</body>
+</html>

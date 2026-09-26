@@ -1,0 +1,33 @@
+[
+  {
+    "id": "rsvp_sample_1",
+    "timestamp": "2026-09-24T18:30:00.000Z",
+    "name": "Marcus & Elena Vance",
+    "phone": "(305) 555-0192",
+    "email": "marcus.vance@example.com",
+    "status": "Coming",
+    "adults": 2,
+    "kids": 0,
+    "kidsAges": "",
+    "excursions": [
+      "Sunset DJ Catamaran Cruise",
+      "Sandbar Day & Jet Skis"
+    ],
+    "notes": "Can't wait for stone crab night! Booked our flights into MIA already."
+  },
+  {
+    "id": "rsvp_sample_2",
+    "timestamp": "2026-09-24T20:15:00.000Z",
+    "name": "Trey Hollister",
+    "phone": "(404) 555-7381",
+    "email": "trey.hollister@example.com",
+    "status": "Might make that bihh",
+    "adults": 1,
+    "kids": 0,
+    "kidsAges": "",
+    "excursions": [
+      "Deep Sea & Reef Fishing Charter"
+    ],
+    "notes": "Checking my work rotation for MLK weekend, 80% confident I'm locking it down."
+  }
+]
